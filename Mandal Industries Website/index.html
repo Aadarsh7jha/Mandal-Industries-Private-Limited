@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandal Industries Pvt. Ltd. – Reliable Logistics & Transport Across India</title>
+<meta name="description" content="India's trusted logistics partner for transport, packing & moving, car carrier, crane services and more. Pan India network. Get a free quote today.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #1E40AF;
+  --blue-mid: #2563EB;
+  --blue-light: #DBEAFE;
+  --blue-pale: #EFF6FF;
+  --orange: #F97316;
+  --orange-pale: #FFF7ED;
+  --orange-soft: #FFEDD5;
+  --white: #FFFFFF;
+  --bg-section: #F8FAFC;
+  --text-dark: #111827;
+  --text-mid: #374151;
+  --text-light: #6B7280;
+  --border: rgba(30,64,175,0.10);
+  --border-soft: rgba(30,64,175,0.06);
+  --shadow: 0 4px 24px rgba(30,64,175,0.09);
+  --shadow-lg: 0 12px 48px rgba(30,64,175,0.13);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:70px}
+.nav-logo img{height:55px;object-fit:contain; }
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:13px;color:var(--text-mid);letter-spacing:.2px;transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue)!important;color:white!important;padding:9px 22px;border-radius:8px;font-weight:700!important;transition:background .2s,transform .2s!important}
+.nav-cta:hover{background:#1d3a9f!important;transform:translateY(-1px)!important}
+
+
+/* Hamburger Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-mid);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile Media Query */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px; /* Navbar ki height */
+    right: -100%; /* Hide menu by default */
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    gap: 0;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    padding-top: 20px;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+  }
+
+  .nav-cta {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
+
+/* HERO */
+.hero{min-height:100vh;padding:100px 6% 70px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;background:var(--white);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:var(--blue-pale);z-index:0;clip-path:ellipse(80% 100% at 100% 50%)}
+.hero-text{position:relative;z-index:1}
+.hero-pill{display:inline-flex;align-items:center;gap:7px;background:var(--blue-pale);border:1px solid rgba(30,64,175,0.18);color:var(--blue);padding:6px 16px;border-radius:6px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:24px}
+.pill-dot{width:9px;height:9px;border-radius:50%;background:#fc0324;}
+h1.hero-title{font-size:clamp(34px,4.2vw,64px);font-weight:800;line-height:1.08;color:var(--text-dark);margin-bottom:18px;letter-spacing:-1.2px}
+h1.hero-title em{font-style:normal;color:var(--blue)}
+.hero-desc{font-size:15px;line-height:1.75;color:var(--text-light);font-weight:400;margin-bottom:34px;max-width:460px}
+.hero-btns{display:flex;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+.btn-main{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:white;padding:13px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 18px rgba(30,64,175,0.28);transition:background .2s,transform .2s}
+.btn-main:hover{background:#1d3a9f;transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-dark);border:1.5px solid rgba(17,24,39,0.15);padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:border-color .2s,color .2s,transform .2s}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:36px}
+.h-stat-num{font-size:24px;font-weight:800;color:var(--blue);line-height:1;letter-spacing:-1px}
+.h-stat-num span{color:var(--orange)}
+.h-stat-lab{font-size:11px;font-weight:600;color:var(--text-light);letter-spacing:.4px;margin-top:3px}
+.hero-img-wrap{ max-width: 700px; height: fit-content; position:relative;z-index:1;border-radius:20px;overflow:visible;display:flex;align-items:center;justify-content:center}
+.hero-img-wrap img{width:100%;border-radius:18px;object-fit:cover;filter:drop-shadow(0 8px 32px rgba(30,64,175,0.15))}
+.hero-img-tag{position:absolute;top:18px;right:18px;background:var(--blue);color:white;border-radius:7px;padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.4px;box-shadow:0 4px 14px rgba(30,64,175,0.3)}
+.hero-badge-card{position:absolute;bottom:18px;left:18px;background:white;border-radius:12px;padding:12px 18px;box-shadow:0 6px 24px rgba(0,0,0,0.10);display:flex;align-items:center;gap:10px}
+.badge-num{font-size:20px;font-weight:800;color:var(--blue)}
+.badge-lab{font-size:11px;font-weight:600;color:var(--text-light)}
+
+/* TRUST STRIP */
+.trust-strip{background:#f25b02;padding:16px 6%;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center}
+.trust-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.92)}
+.t-ico{font-size:16px}
+
+/* SECTION */
+.section{padding:84px 6%}
+.s-tag{display:inline-block;background:var(--blue-pale);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:5px;margin-bottom:14px}
+.s-title{font-size:clamp(26px,3vw,42px);font-weight:800;letter-spacing:-0.8px;line-height:1.1;color:var(--text-dark);margin-bottom:12px}
+.s-title em{font-style:normal;color:var(--blue)}
+.s-sub{font-size:15px;line-height:1.75;color:var(--text-light);font-weight:400}
+
+/* ABOUT */
+.about{background:var(--bg-section)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1100px;margin:0 auto}
+.about-visual{position:relative}
+.about-img-container{overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.a-card{background:white;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px;transition:transform .2s,box-shadow .2s;border:1px solid var(--border-soft)}
+.a-card:hover{transform:scale(1.04);box-shadow:var(--shadow)}
+.a-card-ico{font-size:28px;margin-bottom:8px}
+.a-card-txt{font-size:12px;font-weight:700;color:var(--text-mid);text-align:center;line-height:1.4}
+.about-float-card{position:absolute;bottom:-16px;right:-16px;background:var(--blue);border-radius:16px;padding:18px 22px;color:white;text-align:center;box-shadow:0 8px 32px rgba(30,64,175,0.35)}
+.afc-num{font-size:36px;font-weight:800;line-height:1}
+.afc-lab{font-size:11px;font-weight:600;opacity:.8;margin-top:2px}
+.about-txt p{font-size:14.5px;line-height:1.8;color:var(--text-light);font-weight:400;margin-bottom:16px}
+.about-points{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.apoint{display:flex;align-items:center;gap:11px}
+.apoint-check{width:22px;height:22px;border-radius:50%;background:var(--blue-pale);border:1.5px solid rgba(30,64,175,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue);font-size:11px;font-weight:800}
+.apoint span{font-size:13.5px;font-weight:600;color:var(--text-dark)}
+
+/* SERVICES */
+.services{background:var(--white)}
+.services-head{text-align:center;margin-bottom:52px}
+.services-head .s-sub{max-width:480px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1100px;margin:0 auto}
+.srv-card{background:var(--bg-section);border:1px solid var(--border);border-radius:16px;padding:26px 20px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,background .25s}
+.srv-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);background:var(--white)}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .3s;border-radius:3px 3px 0 0}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-ico{width:46px;height:46px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.srv-card h3{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+.srv-card p{font-size:12.5px;line-height:1.6;color:var(--text-light);font-weight:400}
+
+/* WHY */
+.why{background:var(--bg-section)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto}
+.why-panel{background:var(--blue);border-radius:24px;padding:44px 36px;color:white;position:relative;overflow:hidden}
+.why-panel h3{font-size:28px;font-weight:800;line-height:1.1;margin-bottom:10px;position:relative;letter-spacing:-0.4px}
+.why-panel p{opacity:.75;font-size:14px;line-height:1.7;margin-bottom:32px;font-weight:400;position:relative}
+.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative}
+.wstat{background:rgba(255,255,255,0.12);border-radius:13px;padding:18px 14px;text-align:center}
+.wstat-n{font-size:32px;font-weight:800;line-height:1;letter-spacing:-1px}
+.wstat-l{font-size:10.5px;opacity:.75;font-weight:600;letter-spacing:.4px;margin-top:3px}
+.why-features{display:flex;flex-direction:column;gap:14px}
+.wfeat{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:16px 18px;transition:transform .2s,box-shadow .2s}
+.wfeat:hover{transform:translateX(4px);box-shadow:var(--shadow)}
+.wfeat-ico{width:40px;height:40px;border-radius:10px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.wfeat h4{font-size:13.5px;font-weight:700;color:var(--text-dark);margin-bottom:2px}
+.wfeat p{font-size:12px;color:var(--text-light);font-weight:400;line-height:1.5}
+
+/* TESTIMONIALS AUTO SCROLL */
+.testimonials{background:var(--white);overflow:hidden}
+.test-head{text-align:center;margin-bottom:52px}
+.test-head .s-sub{max-width:440px;margin:0 auto}
+.test-track-wrap{overflow:hidden;position:relative}
+.test-track-wrap::before,.test-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.test-track-wrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.test-track-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+.test-track{display:flex;gap:20px;animation:slideLeft 28s linear infinite;width:max-content}
+.test-track:hover{animation-play-state:paused}
+.test-card{background:var(--bg-section);border:1px solid var(--border);border-radius:18px;padding:26px;width:300px;flex-shrink:0;transition:box-shadow .25s}
+.test-card:hover{box-shadow:var(--shadow-lg)}
+.test-card.featured{background:var(--blue);border-color:var(--blue)}
+.test-card.featured .test-text{color:rgba(255,255,255,0.88)}
+.test-card.featured .test-stars{color:#FCD34D}
+.test-card.featured .test-author strong{color:white}
+.test-card.featured .test-author span{color:rgba(255,255,255,0.65)}
+.test-card.featured .quote-mark{background:rgba(255,255,255,0.15);color:white}
+.quote-mark{width:36px;height:36px;border-radius:10px;background:var(--blue-pale);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;font-style:italic;margin-bottom:14px}
+.test-stars{color:var(--orange);font-size:13px;margin-bottom:12px;letter-spacing:1.5px}
+.test-text{font-size:13.5px;line-height:1.75;color:var(--text-mid);font-weight:400;margin-bottom:20px}
+.test-author{display:flex;align-items:center;gap:10px}
+.test-avatar{width:40px;height:40px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;flex-shrink:0}
+.test-card.featured .test-avatar{background:rgba(255,255,255,0.22)}
+.test-author strong{display:block;font-size:13px;font-weight:700;color:var(--text-dark)}
+.test-author span{font-size:11px;color:var(--text-light);font-weight:500}
+@keyframes slideLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* CLIENTS SLIDE */
+.clients{background:var(--bg-section)}
+.clients-head{text-align:center;margin-bottom:46px}
+.clients-slide-wrap{overflow:hidden;position:relative;margin-bottom:40px}
+.clients-slide-wrap::before,.clients-slide-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.clients-slide-wrap::before{left:0;background:linear-gradient(to right,var(--bg-section),transparent)}
+.clients-slide-wrap::after{right:0;background:linear-gradient(to left,var(--bg-section),transparent)}
+.clients-track{display:flex;gap:16px;animation:slideLeft 22s linear infinite;width:max-content}
+.clients-track:hover{animation-play-state:paused}
+.client-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px 20px;text-align:center;font-size:13px;font-weight:700;color:var(--text-mid);width:160px;flex-shrink:0;transition:transform .2s,color .2s,border-color .2s}
+.client-card:hover{transform:translateY(-3px);color:var(--blue);border-color:rgba(30,64,175,0.22)}
+.cc-ico{font-size:20px;margin-bottom:6px}
+.clients-cta{text-align:center}
+
+/* CONTACT */
+.contact{background:var(--white)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1100px;margin:0 auto}
+.contact-info .s-sub{margin-bottom:32px;max-width:400px}
+.cinfo-items{display:flex;flex-direction:column;gap:18px}
+.cinfo-item{display:flex;gap:13px;align-items:flex-start}
+.cinfo-ico{width:44px;height:44px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid rgba(30,64,175,0.12)}
+.cinfo-txt strong{display:block;font-size:10.5px;font-weight:700;color:var(--text-light);letter-spacing:.7px;text-transform:uppercase;margin-bottom:3px}
+.cinfo-txt a,.cinfo-txt p{color:var(--text-dark);font-size:13px;font-weight:600;text-decoration:none;display:block;line-height:1.6}
+.cinfo-txt a:hover{color:var(--blue)}
+.contact-form{background:var(--bg-section);border:1px solid var(--border);border-radius:20px;padding:34px 32px}
+.contact-form h3{font-size:20px;font-weight:800;color:var(--text-dark);margin-bottom:26px;letter-spacing:-.3px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--text-mid);letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px}
+.fg input,.fg select{width:100%;padding:11px 14px;border:1.5px solid rgba(30,64,175,0.13);border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;font-weight:500;color:var(--text-dark);background:var(--white);outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus{border-color:var(--blue)}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{width:100%;padding:13px;background:var(--blue);color:white;border:none;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 18px rgba(30,64,175,0.25);transition:background .2s,transform .2s;margin-top:6px}
+.btn-submit:hover{background:#1d3a9f;transform:translateY(-1px)}
+
+/* CTA BANNER */
+.cta-banner{background:var(--blue);padding:68px 6%;text-align:center;position:relative;overflow:hidden}
+.cta-inner{position:relative}
+.cta-banner h2{font-size:clamp(24px,3vw,40px);font-weight:800;color:white;margin-bottom:12px;letter-spacing:-.4px}
+.cta-banner p{color:rgba(255,255,255,0.78);font-size:15px;font-weight:400;max-width:480px;margin:0 auto 30px;line-height:1.7}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--blue);padding:13px 32px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 6px 22px rgba(0,0,0,0.12);transition:transform .2s,box-shadow .2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,0.18)}
+
+/* FOOTER */
+footer{background:var(--text-dark);padding:40px 6% 20px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;margin-bottom:24px}
+.footer-logo img{height:60px;object-fit:contain;filter:brightness(0) invert(1)}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:12.5px;font-weight:600;transition:color .2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:16px;text-align:center;color:rgba(255,255,255,0.35);font-size:11.5px;font-weight:500}
+
+/* STICKY */
+.sticky-btns{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:10px;z-index:998}
+.s-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,0.15);transition:transform .2s}
+.s-btn:hover{transform:scale(1.1)}
+.s-wa{background: #1e40af;
+    border: 1px solid rgb(218, 218, 218);}
+.s-btn svg{width:32px;height:32px;fill:white}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding-top:86px;gap:36px}
+  .hero::after{display:none}
+  .about-grid,.why-grid,.contact-wrap{grid-template-columns:1fr;gap:36px}
+  .about-float-card{position:static;display:inline-block;margin-top:10px}
+  .fg-row{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-text{animation:fadeUp .6s ease both}
+.hero-img-wrap{animation:fadeUp .6s .12s ease both}
+
+span.t-ico img{
+  height: 16px;
+}
+.a-card-ico .img-icon-svg{
+  height: 28px;
+}
+
+.services-grid .img-icon-svg{
+  height: 28px;
+}
+
+.wfeat-ico .img-icon-svg{
+  height: 16px;
+}
+
+
+.start-icon-img{
+  height: 12px;
+}
+
+.cinfo-item  .img-icon-svg{
+  height: 16px;
+}
+
+.compny-logo{
+  width: 100%;
+}
+.btn-ghost .img-icon-svg{
+  width: 14px;
+}
+
+.btn-main .img-icon-svg{
+  height: 16px;
+}
+@media(max-width:600px){
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    justify-content: center;
+    align-items: center;
+}
+.trust-item{
+  text-align: center;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="/Assets/logo.png" alt="Mandal Industries"></div>
+  
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-pill"><span class="pill-dot"></span>India's Trusted Logistics Partner</div>
+    <h1 class="hero-title">Reliable Logistics<br>& Transport<br><em>Across India</em></h1>
+    <p class="hero-desc">From small consignments to heavy industrial loads — fast, safe, and affordable logistics solutions with a Pan India network trusted by leading brands.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-main">Get Free Quote <img src="/Assets/right-arrow.svg" class="img-icon-svg"></a>
+      <a href="tel:8595101775" class="btn-ghost"> Call Now <img src="/Assets/call (4).svg" class="img-icon-svg"></a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="h-stat-num">500<span>+</span></div><div class="h-stat-lab">Happy Clients</div></div>
+      <div class="h-stat"><div class="h-stat-num">15<span>+</span></div><div class="h-stat-lab">Years Experience</div></div>
+      <div class="h-stat"><div class="h-stat-num">28<span>+</span></div><div class="h-stat-lab">States Covered</div></div>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <img src="/Assets/Mandan Industries delivery truck and map.png" alt="Logistics Truck">
+    <div class="hero-img-tag">GST Verified ✓</div>
+    <div class="hero-badge-card">
+      <div><div class="badge-num">500+</div><div class="badge-lab">Satisfied Clients</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="t-ico"><img  src="/Assets/trophy.svg"></span>15+ Years of Excellence</div>
+  <div class="trust-item"><span class="t-ico"><img  src="/Assets/shield.svg"></span>Safe & Secure Delivery</div>
+  <div class="trust-item"><span class="t-ico"><img  src="/Assets/call (3).svg"></span>24/7 Customer Support</div>
+  <div class="trust-item"><span class="t-ico"><img  src="/Assets/india.svg"></span>Pan India Network</div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-img-container">
+        <div class="a-card"><div class="a-card-ico"><img  src="/Assets/cargo-truck.svg" class="img-icon-svg"></div><div class="a-card-txt">Transport<br>Services</div></div>
+        <div class="a-card"><div class="a-card-ico"><img  src="/Assets/box.svg" class="img-icon-svg"></div><div class="a-card-txt">Packing &<br>Moving</div></div>
+        <div class="a-card"><div class="a-card-ico"><img  src="/Assets/car.svg" class="img-icon-svg"></div><div class="a-card-txt">Car Carrier<br>Services</div></div>
+        <div class="a-card"><div class="a-card-ico"><img  src="/Assets/crane.svg" class="img-icon-svg"></div><div class="a-card-txt">Crane<br>Services</div></div>
+      </div>
+
+    </div>
+    <div class="about-txt">
+      <div class="s-tag">Who We Are</div>
+      <h2 class="s-title">Logistics You Can<br><em>Trust & Rely On</em></h2>
+      <p>Mandal Industries Private Limited is a trusted name in logistics and transport services, delivering reliable, fast, and cost-effective solutions across India.</p>
+      <p>With years of experience, we handle everything from small consignments to large industrial transportation — with complete safety, professionalism, and precision.</p>
+      <div class="about-points">
+        <div class="apoint"><div class="apoint-check">✓</div><span>Advanced technology & skilled manpower</span></div>
+        <div class="apoint"><div class="apoint-check">✓</div><span>On-time delivery with zero damage guarantee</span></div>
+        <div class="apoint"><div class="apoint-check">✓</div><span>Pan India coverage for all consignment sizes</span></div>
+        <div class="apoint"><div class="apoint-check">✓</div><span>Industry-leading packing techniques</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="services-head">
+    <div class="s-tag">What We Offer</div>
+    <h2 class="s-title">Complete Logistics <em>Solutions</em></h2>
+    <p class="s-sub">Customized solutions for individuals and businesses — whatever your logistics need, we have it covered.</p>
+  </div>
+  <div class="services-grid">
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/truck.svg" class="img-icon-svg"></div><h3>Transport Services</h3><p>Full truck load, part load & express transport covering all major cities across India.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/box.svg" class="img-icon-svg"></div><h3>Packing & Moving</h3><p>Professional packing with advanced materials ensuring zero damage during transit.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/car.svg" class="img-icon-svg"></div><h3>Car Carrier Services</h3><p>Safe vehicle transportation on enclosed carriers with real-time tracking.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/trailer.svg" class="img-icon-svg"></div><h3>Trailer & Heavy Load</h3><p>Specialized heavy equipment transport with all permits and safety measures.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/crane.svg" class="img-icon-svg"></div><h3>Crane Services</h3><p>Industrial crane services for heavy lifting and machinery installation.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/railway.svg" class="img-icon-svg"></div><h3>Railway Transport</h3><p>Cost-effective railway logistics for bulk goods and industrial consignments.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/trolley.svg" class="img-icon-svg"></div><h3>Industrial Logistics</h3><p>Complete tender management and logistics for government and private sector.</p></div>
+    <div class="srv-card"><div class="srv-ico"><img  src="/Assets/warehouse.svg" class="img-icon-svg"></div><h3>Warehousing & Storage</h3><p>Secure, climate-controlled warehousing solutions for short and long-term storage needs.</p></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why" id="why">
+  <div class="why-grid">
+    <div class="why-panel">
+      <h3>We Deliver More Than Goods</h3>
+      <p>We deliver trust, safety, and reliability with every consignment — from the first mile to the last.</p>
+      <div class="why-stats">
+        <div class="wstat"><div class="wstat-n">500+</div><div class="wstat-l">Happy Clients</div></div>
+        <div class="wstat"><div class="wstat-n">15+</div><div class="wstat-l">Years Experience</div></div>
+        <div class="wstat"><div class="wstat-n">28+</div><div class="wstat-l">States Covered</div></div>
+        <div class="wstat"><div class="wstat-n">24/7</div><div class="wstat-l">Support</div></div>
+      </div>
+    </div>
+    <div class="why-features">
+      <div class="wfeat"><div class="wfeat-ico"><img  src="/Assets/group.svg" class="img-icon-svg"></div><div><h4>Experienced Team</h4><p>Industry experts with years of hands-on logistics experience.</p></div></div>
+      <div class="wfeat"><div class="wfeat-ico"><img  src="/Assets/shield (1).svg" class="img-icon-svg"></div><div><h4>Safe & Secure Delivery</h4><p>Advanced packing ensures your goods arrive in perfect condition.</p></div></div>
+      <div class="wfeat"><div class="wfeat-ico"><img  src="/Assets/time.svg" class="img-icon-svg"></div><div><h4>On-Time Commitment</h4><p>We respect your timelines and deliver as promised, every time.</p></div></div>
+      <div class="wfeat"><div class="wfeat-ico"><img  src="/Assets/affordable.svg" class="img-icon-svg"></div><div><h4>Affordable Pricing</h4><p>Transparent rates with no hidden charges. Value guaranteed.</p></div></div>
+      <div class="wfeat"><div class="wfeat-ico"><img  src="/Assets/location-pin.svg" class="img-icon-svg"></div><div><h4>Pan India Network</h4><p>From metros to remote towns — we reach every corner of India.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS AUTO SCROLL -->
+<section class="section testimonials" id="testimonials">
+  <div class="test-head">
+    <div class="s-tag">Testimonials</div>
+    <h2 class="s-title">What Our <em>Clients Say</em></h2>
+    <p class="s-sub">Real words from businesses and individuals who trust us with their most valuable shipments.</p>
+  </div>
+  <div class="test-track-wrap">
+    <div class="test-track" id="testTrack">
+      <div class="test-card">
+        <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Mandal Industries has been our logistics partner for 3 years. Their on-time delivery is exceptional and the team handles every shipment with great care.</p>
+        <div class="test-author"><div class="test-avatar">RK</div><div><strong>Rajesh Kumar</strong><span>Procurement Head, Delhi</span></div></div>
+      </div>
+      <div class="test-card featured">
+        <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">We shifted our entire office across cities and not a single item was damaged. The packing was professional and the team was very courteous.</p>
+        <div class="test-author"><div class="test-avatar">PS</div><div><strong>Priya Sharma</strong><span>Business Owner, Delhi</span></div></div>
+      </div>
+      <div class="test-card">
+       <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Got my car transported from Ghaziabad to Bangalore safely. The car arrived without any scratches. Great service at a very affordable price!</p>
+        <div class="test-author"><div class="test-avatar">AM</div><div><strong>Amit Mehta</strong><span>Individual Client, Ghaziabad</span></div></div>
+      </div>
+      <div class="test-card">
+       <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Their crane and heavy transport services for our industrial project were flawless. The team understood our requirements and executed everything on schedule.</p>
+        <div class="test-author"><div class="test-avatar">VT</div><div><strong>Vikas Tiwari</strong><span>Project Manager, Industrial Corp.</span></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Reliable, professional and always on time. Have used their services for bulk railway transport multiple times and never been disappointed.</p>
+        <div class="test-author"><div class="test-avatar">SK</div><div><strong>Suresh Kumar</strong><span>Supply Chain Manager, Mumbai</span></div></div>
+      </div>
+      <div class="test-card featured">
+        <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Best logistics partner we've had. The team is responsive, prices are competitive and delivery is always on time. Highly recommend Mandal Industries!</p>
+        <div class="test-author"><div class="test-avatar">NP</div><div><strong>Nisha Patel</strong><span>Operations Head, Pune</span></div></div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="test-card">
+        <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Mandal Industries has been our logistics partner for 3 years. Their on-time delivery is exceptional and the team handles every shipment with great care.</p>
+        <div class="test-author"><div class="test-avatar">RK</div><div><strong>Rajesh Kumar</strong><span>Procurement Head, Delhi</span></div></div>
+      </div>
+      <div class="test-card featured">
+      <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">We shifted our entire office across cities and not a single item was damaged. The packing was professional and the team was very courteous.</p>
+        <div class="test-author"><div class="test-avatar">PS</div><div><strong>Priya Sharma</strong><span>Business Owner, Delhi</span></div></div>
+      </div>
+      <div class="test-card">
+       <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Got my car transported from Ghaziabad to Bangalore safely. The car arrived without any scratches. Great service at a very affordable price!</p>
+        <div class="test-author"><div class="test-avatar">AM</div><div><strong>Amit Mehta</strong><span>Individual Client, Ghaziabad</span></div></div>
+      </div>
+      <div class="test-card">
+       <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Their crane and heavy transport services for our industrial project were flawless. The team understood our requirements and executed everything on schedule.</p>
+        <div class="test-author"><div class="test-avatar">VT</div><div><strong>Vikas Tiwari</strong><span>Project Manager, Industrial Corp.</span></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Reliable, professional and always on time. Have used their services for bulk railway transport multiple times and never been disappointed.</p>
+        <div class="test-author"><div class="test-avatar">SK</div><div><strong>Suresh Kumar</strong><span>Supply Chain Manager, Mumbai</span></div></div>
+      </div>
+      <div class="test-card featured">
+       <div class="test-stars">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+          <img src="/Assets/star.svg" class="start-icon-img">
+        </div>
+        <p class="test-text">Best logistics partner we've had. The team is responsive, prices are competitive and delivery is always on time. Highly recommend Mandal Industries!</p>
+        <div class="test-author"><div class="test-avatar">NP</div><div><strong>Nisha Patel</strong><span>Operations Head, Pune</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS SLIDE -->
+<section class="section clients" id="clients">
+  <div class="clients-head">
+    <div class="s-tag">Our Clients</div>
+    <h2 class="s-title">Trusted by <em>Leading Brands</em></h2>
+    <p class="s-sub" style="max-width:440px;margin:0 auto;">Join the growing list of India's top companies that rely on Mandal Industries.</p>
+  </div>
+  <div class="clients-slide-wrap">
+    <div class="clients-track">
+      <div class="client-card">   <img src="/Assets/1.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/2.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/3.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/4.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/5.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/6.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/7.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/8.png" class="compny-logo"></div>
+      <!-- Duplicate -->
+
+       <div class="client-card">   <img src="/Assets/1.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/2.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/3.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/4.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/5.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/6.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/7.png" class="compny-logo"></div>
+      <div class="client-card"><img src="/Assets/8.png" class="compny-logo"></div>
+    
+    </div>
+  </div>
+  <div class="clients-cta"><a href="#contact" class="btn-main">Join Our Client Family →</a></div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="s-tag">Contact Us</div>
+      <h2 class="s-title">Let's Talk <em>Logistics</em></h2>
+      <p class="s-sub">Reach out for a FREE quote. Our team responds within 30 minutes during business hours.</p>
+      <div class="cinfo-items">
+        <div class="cinfo-item">
+          <div class="cinfo-ico"><img  src="/Assets/location-pin.svg" class="img-icon-svg"></div>
+          <div class="cinfo-txt">
+            <strong>Office Address</strong>
+            <p>C/o Amit Roadways, Plot No 39, Shyam Enclave,<br>Nitco Marg Sahibabad, Ghaziabad – 201006</p>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-ico"><img  src="/Assets/call (4).svg" class="img-icon-svg"></div>
+          <div class="cinfo-txt">
+            <strong>Phone Numbers</strong>
+            <a href="tel:8595101775">8595101775 (Office)</a>
+            <a href="tel:9470011450">9470011450</a>
+            <a href="tel:7004037379">7004037379</a>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-ico"><img  src="/Assets/email.svg" class="img-icon-svg"></div>
+          <div class="cinfo-txt">
+            <strong>Email</strong>
+            <a href="mailto:mandalindustries.com@gmail.com">mandalindustries.com@gmail.com</a>
+            <a href="mailto:mandalindustries.dl@gmail.com">mandalindustries.dl@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Get Your Free Quote</h3>
+      <div class="fg"><label>Full Name</label><input type="text" placeholder="Your full name"></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="fg-row">
+        <div class="fg"><label>Pickup City</label><input type="text" placeholder="From"></div>
+        <div class="fg"><label>Drop City</label><input type="text" placeholder="To"></div>
+      </div>
+      <div class="fg">
+        <label>Service Required</label>
+        <select>
+          <option value="">Select a service</option>
+          <option>Transport Services</option>
+          <option>Packing & Moving</option>
+          <option>Car Carrier Services</option>
+          <option>Trailer & Heavy Load</option>
+          <option>Crane Services</option>
+          <option>Railway Transport</option>
+          <option>Industrial Logistics</option>
+          <option>Warehousing & Storage</option>
+        </select>
+      </div>
+      <button class="btn-submit" onclick="alert('Thank you! Our team will call you within 30 minutes.')">Submit & Get Free Quote →</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2>Ready for Hassle-Free Logistics?</h2>
+    <p>Don't risk your valuable goods with inexperienced providers. Contact Mandal Industries today for fast, safe & affordable solutions.</p>
+    <a href="#contact" class="btn-white">Get Free Quote Now →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo"><img src="/Assets/logo.png" alt="Mandal Industries"></div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Mandal Industries Private Limited All rights reserved.</div>
+</footer>
+
+<!-- STICKY WHATSAPP -->
+<div class="sticky-btns">
+  <a href="https://wa.me/918595101775?text=Hello%2C%20I%20need%20a%20free%20logistics%20quote." class="s-btn s-wa" target="_blank" title="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16 3C9.37 3 4 8.37 4 15c0 2.64.87 5.08 2.33 7.07L4 29l7.18-2.28A12.94 12.94 0 0016 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm6.6 16.68c-.27.76-1.58 1.45-2.2 1.54-.56.08-1.27.12-2.04-.13-.47-.15-1.08-.35-1.85-.69-3.26-1.41-5.38-4.72-5.55-4.94-.16-.22-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.63-.4.84-.4h.6c.19 0 .45-.07.7.54.27.63.9 2.2.98 2.36.08.16.13.35.03.56-.1.21-.16.34-.31.52-.15.18-.32.4-.45.54-.15.16-.31.33-.13.64.18.31.79 1.3 1.7 2.1 1.16 1.04 2.14 1.36 2.45 1.51.31.15.49.13.67-.08.18-.21.77-.9.97-1.21.2-.31.4-.26.67-.16.27.1 1.73.82 2.03.97.3.15.5.22.57.34.07.12.07.7-.2 1.45z"/></svg>
+  </a>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  
+  // Optional: Hamburger to 'X' animation
+  const spans = hamburger.querySelectorAll('span');
+  spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(5px, 6px)' : '';
+  spans[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
+  spans[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translate(5px, -6px)' : '';
+});
+
+// Menu link click karne par menu band ho jaye
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+</script>
+</body>
+</html>
