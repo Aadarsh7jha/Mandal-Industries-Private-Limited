@@ -111,15 +111,17 @@ h1.hero-title em{font-style:normal;color:var(--blue)}
 .h-stat-num{font-size:24px;font-weight:800;color:var(--blue);line-height:1;letter-spacing:-1px}
 .h-stat-num span{color:var(--orange)}
 .h-stat-lab{font-size:11px;font-weight:600;color:var(--text-light);letter-spacing:.4px;margin-top:3px}
-.hero-img-wrap{ max-width: 700px; height: fit-content; position:relative;z-index:1;border-radius:20px;overflow:visible;display:flex;align-items:center;justify-content:center}
+.hero-img-wrap{ max-width: 600px; height: fit-content; position:relative;z-index:1; border-radius:20px; overflow:visible;display:flex;align-items:center;justify-content:center}
 .hero-img-wrap img{width:100%;border-radius:18px;object-fit:cover;filter:drop-shadow(0 8px 32px rgba(30,64,175,0.15))}
 .hero-img-tag{position:absolute;top:18px;right:18px;background:var(--blue);color:white;border-radius:7px;padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.4px;box-shadow:0 4px 14px rgba(30,64,175,0.3)}
 .hero-badge-card{position:absolute;bottom:18px;left:18px;background:white;border-radius:12px;padding:12px 18px;box-shadow:0 6px 24px rgba(0,0,0,0.10);display:flex;align-items:center;gap:10px}
 .badge-num{font-size:20px;font-weight:800;color:var(--blue)}
 .badge-lab{font-size:11px;font-weight:600;color:var(--text-light)}
-
+.hero-img-wrap video{
+  border-radius: 12px;
+}
 /* TRUST STRIP */
-.trust-strip{background:#1e40af;padding:16px 6%;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center}
+.trust-strip{background:#1e40b0;padding:16px 6%;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center}
 .trust-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.92)}
 .t-ico{font-size:16px}
 
@@ -312,6 +314,11 @@ span.t-ico img{
 .btn-main .img-icon-svg{
   height: 16px;
 }
+
+.map-size{
+  height: 500px;
+  width: 100%;
+}
 @media(max-width:600px){
 .trust-item {
     display: flex;
@@ -323,7 +330,13 @@ span.t-ico img{
 .trust-item{
   text-align: center;
 }
+
+.map-size{
+  height: 250px;
+  width: 100%;
 }
+}
+
 </style>
 </head>
 <body>
@@ -364,7 +377,8 @@ span.t-ico img{
     </div>
   </div>
   <div class="hero-img-wrap">
-    <img src="/Assets/Mandan Industries delivery truck and map.png" alt="Logistics Truck">
+    <!-- <img src="/Assets/Mandan Industries delivery truck and map.png" alt="Logistics Truck"> -->
+     <video src="/Assets/mandal-industries.mp4"  muted autoplay loop width="100%"></video>
     <div class="hero-img-tag">GST Verified ✓</div>
     <div class="hero-badge-card">
       <div><div class="badge-num">500+</div><div class="badge-lab">Satisfied Clients</div></div>
@@ -688,6 +702,8 @@ span.t-ico img{
     </div>
   </div>
 </section>
+
+<iframe class="map-size" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.3293604837772!2d77.33679657473918!3d28.679792681934345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfaf8bc239d57%3A0x64f9624217831ac7!2sShyam%20Enclave%2C%20Janak%20Puri%2C%20Sahibabad%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201006!5e0!3m2!1sen!2sin!4v1775928614016!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <!-- CTA BANNER -->
 <div class="cta-banner">
